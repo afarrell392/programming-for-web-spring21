@@ -11,5 +11,7 @@ function draw () {
     fill(0, 153, 153);
 
   }
-  ellipse(mouseX, mouseY, 200, 10);
+  ellipse(mouseX, mouseY, 25, 150);
 }
+
+prompt('Does this remind you of KidPix? Y or N');
