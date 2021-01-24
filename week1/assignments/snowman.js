@@ -1,10 +1,10 @@
 /* eslint-disable no-undef-init */
 /* eslint-disable no-undef */
-var img; 
+// var img; 
 
-function preload() {
-  img = loadImage('100px_grid.png');
-}
+// function preload() {
+//   img = loadImage('100px_grid.png');
+// }
 
 let grid = undefined;
 let stroke1 = prompt('enter a basic color name in lower case', 'gray');
@@ -17,7 +17,7 @@ function setup () {
 //   grid = loadImage('100px_grid.png');
 }
 function draw () {
-  image(img, 0, 0);
+//   image(img, 0, 0);
   // hills
   noStroke();
   fill('white');
@@ -105,9 +105,12 @@ function draw () {
   triangle(100, 200, 140, 275, 60, 275);
   triangle(100, 150, 130, 225, 70, 225);
   // snow
-  strokeWeight(10);
+  strokeWeight(15);
   stroke('white');
   point(200, 100);
   point(800, 400);
   point(900, 200);
+  point(50, 250);
+  point(550, 50);
+  point(625, 250);
 }
