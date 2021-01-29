@@ -9,4 +9,5 @@ const movieArray = [
 movieArray.push(yourTitle);
 console.log(movieArray);
 console.log(movieArray.toString());
+window.alert(movieArray);
 console.log('Not all treasure is silver and gold, mate');
