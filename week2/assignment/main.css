@@ -1,0 +1,36 @@
+body {
+  padding: 20px;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  line-height: 3rem;
+  /* position: absolute; */
+  top: 20%;
+  left: 30%;
+  background-image: linear-gradient(red, navy);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+h1 {
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  margin-left: 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+h3 {
+  grid-column: 4 / 5;
+  color: red;
+  width: 200px;
+  padding: 10px;
+  border: 10px solid navy;
+  background: white;
+  opacity: 70%;
+}
