@@ -3,6 +3,7 @@
 
 function setup () {
   createCanvas(600, 600);
+  noStroke();
 }
 
 function createTile (originX, originY, backgroundColor, strokeColor, circleColor) {
@@ -40,17 +41,26 @@ function createTile (originX, originY, backgroundColor, strokeColor, circleColor
   rect(25, 150, 25, 25);
   rect(0, 175, 25, 25);
 }
+
 function draw () {
-  createTile(0, 0, '#b2d8d8', '#008080', '#66b2b2');
-  createTile(0, 200, '#b2d8d8', '#008080', '#66b2b2');
-  createTile(0, 200, '#b2d8d8', '#008080', '#66b2b2');
-  createTile(200, -400, '#b2d8d8', '#008080', '#66b2b2');
-  createTile(0, 200, '#b2d8d8', '#008080', '#66b2b2');
-  createTile(0, 200, '#b2d8d8', '#008080', '#66b2b2');
-  createTile(200, -400, '#b2d8d8', '#008080', '#66b2b2');
-  createTile(0, 200, '#b2d8d8', '#008080', '#66b2b2');
-  createTile(0, 200, '#b2d8d8', '#008080', '#66b2b2');
+  for (var i = 0; i < createTile.length; i++) {
+  createTile(i + 200, i + 200, 'blue', 'red', 'yellow')
+  }
 }
+
+
+
+//   createTile(0, 0, '#b2d8d8', '#008080', '#66b2b2');
+//   createTile(0, 200, '#b2d8d8', '#008080', '#66b2b2');
+//   createTile(0, 200, '#b2d8d8', '#008080', '#66b2b2');
+//   createTile(200, -400, '#b2d8d8', '#008080', '#66b2b2');
+//   createTile(0, 200, '#b2d8d8', '#008080', '#66b2b2');
+//   createTile(0, 200, '#b2d8d8', '#008080', '#66b2b2');
+//   createTile(200, -400, '#b2d8d8', '#008080', '#66b2b2');
+//   createTile(0, 200, '#b2d8d8', '#008080', '#66b2b2');
+//   createTile(0, 200, '#b2d8d8', '#008080', '#66b2b2');
+// }
+
 // trying loops, not being successful
 
 // function draw () {
