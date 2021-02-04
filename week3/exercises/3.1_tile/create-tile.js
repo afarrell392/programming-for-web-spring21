@@ -1,6 +1,9 @@
+/* eslint-disable no-undef */
 // anna's tile
+// eslint-disable-next-line no-unused-vars
 function setup () {
   createCanvas(200, 200);
+  noLoop();
 }
 
 function createTile () {
@@ -32,8 +35,8 @@ function createTile () {
   rect(175, 0, 25, 25);
   rect(150, 25, 25, 25);
   rect(125, 50, 25, 25);
-//   rect(100, 75, 25, 25);
-//   rect(75, 100, 25, 25);
+  //   rect(100, 75, 25, 25);
+  //   rect(75, 100, 25, 25);
   rect(50, 125, 25, 25);
   rect(25, 150, 25, 25);
   rect(0, 175, 25, 25);
