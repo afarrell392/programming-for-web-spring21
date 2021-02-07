@@ -40,6 +40,7 @@ function createTile (originX, originY, backgroundColor, strokeColor, circleColor
   rect(25, 150, 25, 25);
   rect(0, 175, 25, 25);
 }
+
 function draw () {
   createTile(0, 0, '#b2d8d8', '#008080', '#66b2b2');
   createTile(0, 200, '#66b2b2', '#b2d8d8', '#008080');
@@ -51,11 +52,15 @@ function draw () {
   createTile(0, 200, '#66b2b2', '#b2d8d8', '#008080');
   createTile(0, 200, '#b2d8d8', '#008080', '#66b2b2');
 }
+
 // trying loops, not being successful
 
-// function draw () {
-//   for (var i = 0; i < 600; i ++) {
-//     createTile(i, i + 200, 'black', 'orange', 'green');
-//   }
-// }
 
+// // y axis
+// function draw () {
+//   noLoop();
+// for (let xAxis = 25; xAxis < 400; xAxis += 50) {
+// for(let yAxis = 25; yAxis < 400; yAxis += 50) {
+//   circle(xAxis, yAxis, 50);
+// }
+// }
