@@ -4,7 +4,7 @@ let rectY;
 const rectWidth = 75;
 let clickCount = 0;
 let speed;
-document.body.style.cursor = 'pointer';
+document.body.style.cursor = 'pointer'; // turns the pointer to the hand the entire time, but it's a step
 
 function setup () {
   createCanvas(500, 500);
