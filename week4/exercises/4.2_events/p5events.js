@@ -1,13 +1,51 @@
+let rectX = 0;
+const rectHeight = 75;
+let rectY;
+const rectWidth = 75;
+let clickCount = 0;
+let speed;
+document.body.style.cursor = 'pointer';
+
+function setup () {
+  createCanvas(500, 500);
+  rectY = random(height - rectHeight);
+  speed = random(1, 3);
+}
+
+function draw () {
+  background('purple');
+  drawShape();
+  textSize(28);
+  rectX += speed;
+  if (rectX > width) {
+    noLoop();
+    text('Your score was ' + clickCount, 100, 300);
+  }
+}
+
+function mousePressed () {
+  if ((mouseX >= rectX && mouseX <= rectX + rectWidth) && (mouseY >= rectY && mouseY <= rectY + rectHeight)) {
+    clickCount++;
+    console.log('hit', clickCount);
+  }
+}
+
+function drawShape () {
+  fill('limegreen');
+  noStroke();
+  rect(rectX, rectY, rectWidth, rectHeight);
+}
+
+/* TUESDAY DEMO
+
 const circleDiameter = 100;
-// let circleX = 200;
-// let circleY = 300;
 const myCircle = [];
 let startingX = 200;
 let startingY = 100;
 let startingId = 0;
 
 function setup () {
-  createCanvas(1000, 500);
+  createCanvas(500, 500);
   background(0);
   for (let k = 0; k < 2; k++) {
     for (let i = 0; i < 4; i++) {
@@ -28,10 +66,7 @@ function setup () {
 //   drawShape();
 // }
 
-// function drawShape() {
-//     fill('limegreen');
-//     noStroke();
-//     // ellipse(circleX, circleY, circleDiameter);
+//
 // }
 
 function mousePressed () {
@@ -40,9 +75,4 @@ function mousePressed () {
     if (distance < circleDiameter / 2) {
       console.log('circle has been clicked', myCircle[j].id);
     }
-  }
-
-  // if(mouseX >= 0 && mouseX <= 100) {
-  //     console.log('hit');
-  // }
-}
+*/
