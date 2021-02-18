@@ -9,7 +9,7 @@ const speed = 10;
 const distance = 2;
 function setup () {
   createCanvas(500, 500);
-  background(0);
+  background('MediumAquaMarine');
   drawBlock(blockX, blockY, 255);
 }
 // keyTyped (key) vs keyPressed (keyCode) gives you the actual key, rather than a number.
@@ -21,7 +21,6 @@ function keyTyped () {
   }
   // the 1 and the 9 define the low and high numbers of the input, 1 and 255 define the low and high numbers of the output (color, in this case)
   keyToNumber = map(keyToNumber, 1, 9, 1, 255);
-  console.log('converted number', keyToNumber);
   blockColor = keyToNumber;
 }
 
