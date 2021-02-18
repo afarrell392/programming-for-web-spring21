@@ -4,7 +4,7 @@ let blockY = 0;
 let blockColor = 25;
 let drawTimer;
 // lower numbers are faster
-const speed = 10;
+const speed = 6;
 // how much the block is moved on the y axis
 const distance = 2;
 function setup () {
@@ -27,18 +27,18 @@ function keyTyped () {
 function drawBlock (x, y, color) {
   // short circuit condition: if color doesn't exist, it defaults to the color that follows the pipes (|| - this is the OR operator)
   fill(color || 230);
-  rect(x, y, 50);
+  rect(x, y, 70);
 }
 window.setTimeout(() => {
   drawTimer = window.setInterval(() => {
-    if (blockY - 50 <= height) {
+    if (blockY - 70 <= height) {
       drawBlock(blockX, blockY, blockColor);
       blockY += distance;
     } else {
       blockY = 0;
-      blockX += 50;
+      blockX += 70;
     }
-    if (blockY - 50 > height && blockX - 50 > width) {
+    if (blockY - 70 > height && blockX - 70 > width) {
       // cancels the timer
       window.clearInterval(drawTimer);
       alert('done');
