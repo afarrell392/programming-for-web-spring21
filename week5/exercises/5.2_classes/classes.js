@@ -1,20 +1,21 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable prefer-const */
 /* eslint-disable no-undef */
-let rect1;
-let rect2;
+let rectArray = [];
 
 function setup () {
   createCanvas(600, 400);
-  rect1 = new Rectangle(250, 150, 100, 100);
-  rect2 = new Rectangle(200, 100, 50, 50);
+  for (let i = 0; i < 6; i++) {
+    const rect = new Rectangle(200, 200, 25, 25);
+    rectArray.push(rect);
+  }
 }
-// I couldn't figure out the for loop for drawing the rectangle. Among other attempts, I moved 'new Rectangle' into the draw function as a for loop, but I just couldn't seem to execute it.
-
 function draw () {
   background(0);
-  rect1.move();
-  rect1.show();
-  rect2.move();
-  rect2.show();
+  for (let k = 0; k < 5; k++) {
+    rectArray[k].move();
+    rectArray[k].show();
+  }
 }
 // classes are new blocks of code that contain everything it means to be that object: functionality, data, etc. The class is the cookie cutter.
 class Rectangle {
@@ -34,7 +35,7 @@ class Rectangle {
 
   show () {
     stroke('purple');
-    strokeWeight(10);
+    strokeWeight(7);
     noFill();
     rect(this.x, this.y, this.w, this.h);
   }
