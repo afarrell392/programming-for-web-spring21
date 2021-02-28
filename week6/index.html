@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css">
+    <title>6.A Vue the Llama</title>
+</head>
+    
+  <body>
+      <div class="hero">
+        <h1> Llama Facts</h1>
+    </div>
+    <div id="llamaFacts">
+        <ul>
+          <li v-for="item in items">{{item}}</li>
+          <li v-if="llamaHerd!==true"> LLamas are social animals</li>
+          <li v-else>A group of llamas is called a herd.</li>    
+        </ul>
+    </div>
+    <a href="https://www.thoughtco.com/fun-facts-about-llamas-3880940"> Llama facts source </a> 
+   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+   <script src="vue.js"></script>
+  </body>
+</html>
