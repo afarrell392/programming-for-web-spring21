@@ -1,0 +1,25 @@
+[v-cloak] {
+  display: none;
+}
+body {
+  background: teal;
+}
+td,
+th {
+  border: 2px lightgrey solid;
+  background-color: lightpink;
+  padding: 5px;
+  width: 250px;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+.secondaryHeader {
+  background-color: orange;
+  font-weight: 700;
+  font-size: 1.4em;
+}
+
+td.active {
+  opacity: 70%;
+}

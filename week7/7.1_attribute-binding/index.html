@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>7.1 Exercise</title>
+</head>
+<body>
+    <div id="vm1" v-cloak v-bind:style="container">
+            <h1 v-bind:style="header">Llamas v. Alpacas</h1>
+        <table v-bind:style="table">
+            <tr>
+                <th class="secondaryHeader">Species</th> 
+                <th><a v-bind:title="llamaTitle" v-bind:href="llamaSite">Llamas</a></th> 
+                <th><a v-bind:title="alpacaTitle" v-bind:href="alpacaSite">Alpacas</a></th> 
+            </tr>
+
+            <tr>
+                <td class="secondaryHeader" v-bind:class="{active: currentRoute==='breeding'}">Breeding</td>
+                <td>As working animals</td>
+                <td>For fiber</td>
+            </tr>
+            <tr>
+                <td class="secondaryHeader" v-bind:class="{active: currentRoute==='genus'}">Genus</td>
+                <td>Lama</td>
+                <td>Vicugna</td>
+            </tr>
+            <tr>
+                <td class="secondaryHeader" v-bind:class="{active: currentRoute==='size'}">Size</td>
+                <td>Llamas weigh around 250 lbs</td>
+                <td>Alpacas weigh 121 to 143 lbs </td>
+            </tr>
+            
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="binding.js"></script>   
+</body>
+</html>
