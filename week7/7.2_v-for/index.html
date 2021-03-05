@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loops</title>
+    
+</head>
+<body>
+    <h1>Looping</h1>
+    <div id="app" v-cloak>
+<!--prop is the loop variable-->
+        <div v-for="(prop, key) in myDog">
+            {{key}}:{{prop}}
+        </div>
+
+        <!-- <div>
+        class="animal-container" 
+        style="border: 1px solid black; margin: 10px"
+        v-for="(critter, index) in animals">
+        <div><h2>{{index}}</h2></div> 
+        <div>{{critter.name}}</div>
+        <div>{{critter.color}}</div>
+    </div> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="loop-script.js"></script>
+</body>
+</html>
