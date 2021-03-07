@@ -1,0 +1,76 @@
+body {
+  margin: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: lightgray;
+  font-size: 1.4em;
+}
+
+h1 {
+  font-size: 2.5em;
+  border-bottom: 10px solid #34495e;
+  display: inline;
+}
+
+a {
+  color: #c56c39;
+}
+
+table,
+thead,
+th,
+tbody,
+tr,
+td {
+  padding: 10px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.odd {
+  background: #213a1b;
+}
+
+.even {
+  background: #34495e;
+}
+
+.first {
+  color: #c56c39;
+}
+
+.second {
+  color: white;
+}
+
+.key {
+  list-style: none;
+  display: grid;
+  width: 500px;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+}
+
+.key > div {
+  text-align: center;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.key-park {
+  background-color: white;
+}
+
+.key-other {
+  background-color: #c56c39;
+}
+
+.container {
+  background-color: #213a1b;
+  padding: 15px;
+  margin-top: 20px;
+  color: white;
+  line-height: 2em;
+}

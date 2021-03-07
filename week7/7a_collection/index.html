@@ -5,9 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7A National Park Service</title>
+    <link rel="stylesheet" href="lib/style.css">
+    
 </head>
 <body>
+    <h1 v-bind:style="header">National Parks Visited</h1>
+    <div id="npsApp">
+        <table>
+            <thead v-bind:style="header">
+                <th>Image</th>
+                <th>Name</th>
+                <th>State</th>
+                <th>Year Established</th>
+                <th>Year I Last Visited</th>
+            </thead>
+            <tbody>
+            <tr 
+            v-for="(park, index) in parks"
+            v-bind:class="{
+                first: park.isOfficialPark === 'false', 
+                second: park.isOfficialPark ==='true',
+                odd: (index + 1) % 2 !==0,
+                even: (index + 1) % 2 ===0
+            }"
+            >
+                <td><img v-bind:src="park.image" v-bind:alt="park.name"> </td>
+                <td>{{park.name}}</td>
+                <td>{{park.state}}</td>
+                <td>{{park.established}}</td>
+                <td>{{park.yearVisited}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="key">
+                <div class="key-park">Designated Park </div>
+                <div class="key-other"> Designated Other </div>
+        </div>
+        <div class="container">
+            <p>The 
+                <a href="https://www.nps.gov/aboutus/national-park-system.htm" > National Park Service </a>
+                manages 423 individual units covering more than 85 million acres in all 50 states, the District of Columbia, and US territories. While there are at least 19 naming designations, these units are commonly referred to as "parks." Multiple parks may be managed together as an administrative unit within the National Park Service. Other naming designations include:</p>
+            <ul>
+                <li>National Battlefields</li>
+                <li>National Battlefield Parks</li>
+                <li>National Battlefield Sites</li>
+                <li>National Military Parks</li>
+                <li>National Historical Parks</li>
+                <li>National Lakeshores</li>
+                <li>National Memorials</li>
+                <li>National Monuments</li>
+                <li>National Parkways</li>
+                <li>National Seashores</li>
+            </ul>
+        </div>
+       
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-    <script src="script.js"></script>
+    <script src="lib/script.js"></script>
 </body>
 </html>
