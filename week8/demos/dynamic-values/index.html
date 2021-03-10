@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 8 demos - dynamic values </title>
+</head>
+<body>
+    <h1>Dynamic Values Meow</h1>
+    <div id="more-forms">
+        <fieldset>
+            <legend>Dynamic Binding</legend>
+                <div class="form-group">
+                    <p for="comiccats">Favorite Comic Cats</p>
+                    <div v-for="cat in cats">
+                        <label>{{cat.name}} <input type="radio"
+                         v-model="selectedCat" v-bind:value="cat" /> </label>
+                    </div>
+                </div>
+        </fieldset>
+    
+        <div>
+            <h3>Output</h3>
+            <!--the p tag will not render unless an option is selected. The v-if makes that so.-->
+            <p v-if="selectedCat.name">{{selectedCat.name}} is from the comic {{selectedCat.comic}}</p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="script.js"></script> 
+</body>
+</html>

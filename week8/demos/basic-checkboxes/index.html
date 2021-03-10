@@ -20,22 +20,22 @@
 
             <div class="checkbox-form-group">
                 <p>What kinds of pets have you owned?</p>
-                <label>cat <input type="checkbox" value="cat"/> </label>
-                <label>dog <input type="checkbox" value="dog"/> </label>
-                <label>llama <input type="checkbox" value="llama"/> </label>
-                <label>emu <input type="checkbox" value="emu"/> </label>
-                <label>axolotl <input type="checkbox" value="axolotl"/> </label>      
+                <label>cat <input type="checkbox" value="cat" v-model="pets"/> </label>
+                <label>dog <input type="checkbox" value="dog" v-model="pets"/> </label>
+                <label>llama <input type="checkbox" value="llama" v-model="pets"/> </label>
+                <label>emu <input type="checkbox" value="emu" v-model="pets"/> </label>
+                <label>axolotl <input type="checkbox" value="axolotl" v-model="pets"/> </label>      
             </div>
             <div class="radio-form-group">
                 <p> Which is your favorite type of food?</p>
-                <label>Italian <input type="radio" value="italian"></label>
-                <label>Japanese <input type="radio" value="japanses"></label>
-                <label>Korean <input type="radio" value="korean"></label>
-                <label>'Murican<input type="radio" value="italian"></label>
+                <label>Italian <input type="radio" value="italian" v-model="favFood"/></label>
+                <label>Japanese <input type="radio" value="japanese" v-model="favFood"/></label>
+                <label>Korean <input type="radio" value="korean" v-model="favFood"/></label>
+                <label>'Murican<input type="radio" value="italian" v-model="favFood"/></label>
             </div>
             <div class="form-group">
                 <label for="direction"> You are currently facing ____ (choose the closest one)</label>
-                <select>
+                <select v-model="direction">
                     <option value="north">North</option>
                     <option value="east">East</option>
                     <option value="south">South</option>
@@ -46,6 +46,10 @@
     <div>
         <div><strong>Output</strong>
             <p>Alien: {{alien}}</p>
+            <!--checkbox means you can have more than one selection-->
+            <p>pet: {{pets}}</p>
+            <p>food: {{favFood}}</p>
+            <p>Direction: {{direction}}</p>
         
         </div>
     </div>
