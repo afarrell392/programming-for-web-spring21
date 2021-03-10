@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>8.2 Calculator</title>
+    <link rel="stylesheet" href="lib/style.css">
 </head>
 <body>
     <h1>8.2 Calculator</h1>
-    <div id="calcApp">
+    <div id="calcApp" class="container">
         <form>
             <div>
                 <input v-model.number="firstNum" type="number" placeholder="first number">
@@ -22,8 +23,7 @@
             </div>
             <button v-on:click="calculate(firstNum, secondNum)" type="button">Calculate</button>
         </form>
-        <div>
-            Operation: {{operation}}<br>
+        <div class="total">
             Total: <strong>{{total}}</strong>
         </div>
 

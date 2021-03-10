@@ -1,0 +1,29 @@
+body {
+  background: lightgray;
+  margin: 40px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.container {
+  background: lightskyblue;
+  border: rgb(0, 140, 255) 7px dashed;
+  width: 300px;
+  text-align: center;
+  padding: 10px;
+}
+
+button,
+select,
+input,
+.total {
+  margin: 10px;
+  font-size: 1.6em;
+}
+
+.total {
+  width: 250px;
+  font-weight: 600;
+  border-radius: 10px;
+  background: rgb(0, 140, 255);
+  padding: 10px;
+  text-align: left;
+}
