@@ -1,0 +1,53 @@
+[v-cloak] {
+  display: none;
+}
+body {
+  background: black;
+  color: white;
+  font-size: 1.5em;
+}
+h1 {
+  margin-left: 10px;
+  font-size: 2.3em;
+  background-image: linear-gradient(
+    to left,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+div {
+  margin: 10px 0;
+  display: flex;
+}
+div.alpaca-status,
+div.alpaca-color,
+div.output {
+  flex-direction: column;
+}
+div label {
+  margin-right: 10px;
+}
+div input,
+div select {
+  flex-grow: 1;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  margin: 5px 0;
+}
