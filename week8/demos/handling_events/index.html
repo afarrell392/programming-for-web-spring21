@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo: Events with Expressions </title>
+</head>
+<body>
+    <!--Events with Expressions-->
+    <!-- <h1>Hello Events with Expressions</h1>
+    <div id="basic-events">
+        when you click on the button, the message changes
+        <button v-on:click="sad=true">Woot!</button>
+        <p v-if="sad">{{message}}</p>
+    </div> -->
+
+    <!--Events with Methods: a form of validation. Created v-on, created DOM event on submit, and check name in methods object in js (property name and the value is a function. When we wantt to refer to things in the data object, we use 'this'.) v-bind:disabled disables the button if it returns true. .prevent stops the normal action (page refreshing, for ex.) from happening. This is called an event modifier.-->
+    <h1>Events and methods</h1>
+    <div id="events">
+        <form v-on:submit.prevent="checkName">
+            <label> What is your name <input type="text" v-model="name"></label>
+
+            <button type="submit" v-bind:disabled="!name">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="lib/script.js"></script> 
+</body>
+</html>
