@@ -1,6 +1,14 @@
 let vm = new Vue({
   el: '#npsApp',
   data: {
+    newParkObj: {
+      image: '',
+      name: '',
+      state: '',
+      isOfficialPark: 'true',
+      established: '',
+      yearVisited: ''
+    },
     parks: [
       {
         image: 'img/acad.jpg',
@@ -42,5 +50,27 @@ let vm = new Vue({
         established: '1970',
         yearVisited: '2017'
       }]
+  },
+  methods: {
+    submitHandler: () => {
+      console.log('submitted');
+      vm.parks = vm.parks.concat(vm.newParkObj);
+      vm.resetForm();
+    },
+    resetForm: () => {
+      vm.newParkObj = {
+        image: '',
+        name: '',
+        state: '',
+        isOfficialPark: 'true',
+        established: '',
+        yearVisited: ''
+      };
+    },
+    deleteItem: item => {
+      vm.parks = vm.parks.filter(park => {
+        return park !== item;
+      })
+    }
   }
-})
+});
