@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <title>gboo</title>
+  </head>
+
+  <body>
+   <h1>Camelid components</h1>
+   <div id="app">
+     <div v-for="camelids in camelids">
+       <camelids-component v-bind:common-name="camelids.commonName"
+       v-bind:binomial-name="camelids.binomialName"
+       v-bind:order="camelids.order"
+       v-bind:family="camelids.family"
+       v-bind:genus="camelids.genus"
+       v-bind:species="camelids.species"
+       v-bind:image="camelids.image"
+       ></camelids-component>
+     </div>
+   </div>
+   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   <script src="script.js"></script>
+  </body>
+</html>

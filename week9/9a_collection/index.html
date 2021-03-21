@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9A National Park Service</title>
+    <link rel="stylesheet" href="lib/style.css">
+    
+</head>
+<body>
+    <h1>National Parks Visited</h1>
+    <div id="npsApp">
+        <table>
+            <thead>
+                <th>Image</th>
+                <th>Name</th>
+                <th>State</th>
+                <th>Year Established</th>
+                <th>Year I Last Visited</th>
+            </thead>
+            <tbody>
+            <tr is="parks-component"
+            v-for="(parks, index) in parks"
+            v-bind:class="{
+                first: parks.isOfficialPark === 'false', 
+                second: parks.isOfficialPark ==='true',
+                odd: (index + 1) % 2 !==0,
+                even: (index + 1) % 2 ===0
+            }">
+            <parks-component
+            :image="parks.image"
+            :name="parks.name"
+            :state="parks.state"
+            :established="parks.established"
+            :year-visited="parks.yearVisited"
+            ></parks-component>
+            </tr>
+            </tbody>
+        </table>
+        <div class="key">
+                <div class="key-other"> Designated Other </div>
+        </div>
+        <div class="form-container">
+        <h3>Add a park to the list</h3>
+       <form v-on:submit.prevent="submitHandler" class="new-park-form">
+           <fieldset>
+               <div>
+                <label for="image"> Image </label>
+                 <input id="image" type="text" v-model="newParkObj.image">
+             </div>
+               <div>
+                   <label for="name"> Name </label>
+                    <input id="name" type="text" v-model="newParkObj.name">
+                </div>
+                <div>
+                    <label for="state"> State </label>
+                     <input id="state" type="text" v-model="newParkObj.state">
+                 </div>
+                 <div>
+                    <label for="established"> Established </label>
+                     <input id="established" type="text" v-model="newParkObj.established">
+                 </div>
+                 <div>
+                    <label for="yearVisited"> Last Visited </label>
+                     <input id="yearVisited" type="text" v-model="newParkObj.yearVisited">
+                 </div>
+                 <div>
+                    <label for="isOfficialPark"> Official Park? </label>
+                     <input id="isOfficialPark" type="checkbox" v-model="newParkObj.isOfficialPark">
+                 </div>
+                 <button type="submit">Submit</button>
+           </fieldset>
+       </form>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="lib/script.js"></script>
+</body>
+</html>
