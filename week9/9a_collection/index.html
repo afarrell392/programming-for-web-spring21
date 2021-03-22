@@ -27,15 +27,15 @@
                 second: parks.isOfficialPark ==='true',
                 odd: (index + 1) % 2 !==0,
                 even: (index + 1) % 2 ===0
-            }">
-            <parks-component
+            }"
             :image="parks.image"
             :name="parks.name"
             :state="parks.state"
             :established="parks.established"
-            :year-visited="parks.yearVisited"
-            ></parks-component>
-            </tr>
+            :year-visited="parks.yearVisited">
+        </tr>
+            
+
             </tbody>
         </table>
         <div class="key">
