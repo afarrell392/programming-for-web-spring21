@@ -12,8 +12,8 @@
 </head>
 <body>
     <h1>Billboard Top Streaming Tracks</h1>
-    <div id="musicApp">
-        
+    <div id="musicApp" class="track-wrapper">
+        <streaming-track :track="song" v-for="song in tracks"></streaming-track>
     </div>
 
     <script src="script.js"></script>
