@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Assignment 10</title>
+
+</head>
+<body>
+    <div class="wrapper">           
+    <h1>Sunrise and Sunset</h1>
+    <div class="location">
+        <h2>Friday, April 2, 2021</h2>
+        <h3>Bar Harbor, Maine</h3>
+    </div>
+    
+    <div class="day-wrapper">
+        <div class="heading-wrapper">
+            <p>Sunrise:</p>
+            <p>Sunset:</p>
+            <p>Length:</p>
+        </div>
+        <div id="sunApp" class="time-wrapper">
+            <sun-time v-bind:results="time" v-for="time in results"></sun-time>
+        </div>
+    </div>
+    <div> <img src="https://cdn.elebase.io/dbcc75a2-4b9f-4a0e-8e4b-cfa273624e10/f9df1cf5-454d-480e-9ee1-0287c332fbb4-vtmea5e9a440bd05ff74.jpg"></div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

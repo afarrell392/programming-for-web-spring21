@@ -1,0 +1,30 @@
+body {
+  background: lavender;
+  margin: 20px;
+}
+h1 {
+  background-color: orange;
+  padding: 10px;
+  font-size: 3em;
+}
+
+.wrapper {
+  width: 500px;
+}
+
+.location {
+  border-bottom: darkviolet 8px solid;
+}
+.heading-wrapper {
+  font-size: 1.5em;
+  font-weight: 700;
+  display: inline-block;
+  /* background: orange; */
+  padding-right: 10px;
+}
+
+.time-wrapper {
+  font-size: 1.5em;
+  display: inline-block;
+  /* background: yellow; */
+}
