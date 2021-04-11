@@ -3,7 +3,7 @@ let x;
 let num = 80;
 function setup() {
   createCanvas(displayHeight, displayWidth);
-  background(201, 201, 18);
+  background(150, 150, 38);
   noStroke();
 }
 
