@@ -1,18 +1,27 @@
-let mySound;
-
 function preload() {
   soundFormats ('wav');
-  mySound = loadSound('owl');
+  sound1 = loadSound('owl');
 }
 
 function setup() {
-  let cnv = createCanvas(100, 100);
-  cnv.mousePressed(canvasPressed);
-  background(220);
-  text('tap here to play', 10, 20);
+  cnv = createCanvas(500, 500);
+  cnv.mouseClicked(toggleSound);
+  amplitude = new p5.Amplitude();
 }
 
-function canvasPressed() {
-  mySound.setVolume(0.1);
-  mySound.play();
+function draw() {
+  background(0);
+
+  let level = amplitude.getLevel();
+  let size = map(level, 0, 1, 0, 200);
+  fill(200, 21, 20)
+  ellipse(width/2, height/2, size, size);
+}
+
+function toggleSound() {
+  if (sound1.isPlaying()) {
+    sound1.stop();
+  } else {
+    sound1.play();
+  }
 }
