@@ -1,7 +1,7 @@
 let mySound;
 
 function preload() {
-  soundFormats('mp3', 'wav');
+  soundFormats ('wav');
   mySound = loadSound('owl');
 }
 
