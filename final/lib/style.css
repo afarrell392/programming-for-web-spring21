@@ -1,0 +1,16 @@
+h1 {
+  color: #f2d13d;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 4em;
+}
+body {
+  background: #007299;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+
+  margin: 30px;
+  font-size: larger;
+}
+div {
+  width: 60%;
+}
