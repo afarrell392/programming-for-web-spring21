@@ -10,48 +10,48 @@ const gameState = {
   attempts: 0,
   waiting: false
 };
-let cardfaceArray = [];
+let cardsoundArray = [];
 let cardBack;
 let cardsoundArray = [];
 
 function preload () {
   cardBack = loadImage('lib/imgs/240-300/birdeggs.jpg');
-  cardfaceArray = [
-    loadImage('lib/imgs/240-300/barred-owl.jpg'),
-    loadImage('lib/imgs/240-300/cardinal.jpg'),
-    loadImage('lib/imgs/240-300/chickadee.jpg'),
-    loadImage('lib/imgs/240-300/hermit-thrush.jpg'),
-    loadImage('lib/imgs/240-300/loon.jpg')
-  ]
+  // cardsoundArray = [
+  //   loadImage('lib/imgs/240-300/barred-owl.jpg'),
+  //   loadImage('lib/imgs/240-300/cardinal.jpg'),
+  //   loadImage('lib/imgs/240-300/chickadee.jpg'),
+  //   loadImage('lib/imgs/240-300/hermit-thrush.jpg'),
+  //   loadImage('lib/imgs/240-300/loon.jpg')
+  // ]
   soundFormats('wav');
   cardsoundArray = [
-    sound1 = loadSound('barred-owl'),
-    sound2 = loadSound('cardinal'),
-    sound3 = loadSound('chickadee'),
-    sound4 = loadSound('hermit-thrush'),
-    sound5 = loadSound('loon')
+   loadSound('barred-owl'),
+  loadSound('cardinal'),
+  loadSound('chickadee'),
+   loadSound('hermit-thrush'),
+    loadSound('loon')
   ]
 }
 
 function setup () {
   cnv = createCanvas(1550, 1000);
-  let selectedFaces = [];
+  let selectedSounds = [];
   for (let z = 0; z < 5; z++) {
-    const randomIdx = floor(random(cardfaceArray.length));
-    const face = cardfaceArray[randomIdx];
-    selectedFaces.push(face);
-    selectedFaces.push(face);
-    // remove the used cardface so it doesn't get randomly seleted again
-    cardfaceArray.splice(randomIdx, 1);
+    const randomIdx = floor(random(cardsoundArray.length));
+    const sound = cardsoundArray[randomIdx];
+    selectedSounds.push(sound);
+    selectedSounds.push(sound);
+    // remove the used cardsound so it doesn't get randomly seleted again
+    cardsoundArray.splice(randomIdx, 1);
   }
-  selectedFaces = shuffleArray(selectedFaces);
+  selectedSounds = shuffleArray(selectedSounds);
   // loop to create row and number of cards
   for (let j = 0; j < 2; j++) {
     for (let i = 0; i < 5; i++) {
       // pop returns the selected item that was removed
-      const faceImage = selectedFaces.pop();
+      const soundImage = selectedSounds.pop();
       // pushed card in to create new cookie
-      cards.push(new Card(startingX, startingY, faceImage));
+      cards.push(new Card(startingX, startingY, soundImage));
       // increment
       startingX += 300;
     }
@@ -71,7 +71,7 @@ function draw () {
   }
   for (let k = 0; k < cards.length; k++) {
     if (!cards[k].isMatch) {
-      cards[k].face = DOWN;
+      cards[k].sound = DOWN;
     }
     cards[k].show();
   }
@@ -97,7 +97,7 @@ function mousePressed () {
   }
   if (gameState.flippedCards.length === 2) {
     gameState.attempts++;
-    if (gameState.flippedCards[0].cardFaceImg === gameState.flippedCards[1].cardFaceImg) {
+    if (gameState.flippedCards[0].cardsoundImg === gameState.flippedCards[1].cardsoundImg) {
       // if the cards match -- time to score
       // marks cards as matched so they don't flip back.
       gameState.flippedCards[0].isMatch = true;
@@ -119,24 +119,24 @@ function mousePressed () {
 }
 
 class Card {
-  constructor (x, y, cardFaceImg) {
+  constructor (x, y, cardsoundImg) {
     // properties
     this.x = x;
     this.y = y;
     this.width = 240;
     this.height = 300;
-    this.face = DOWN;
-    this.cardFaceImg = cardFaceImg;
+    this.sound = DOWN;
+    this.cardsoundImg = cardsoundImg;
     this.isMatch = false;
     this.show();
   }
 
   // method.
   show () {
-    if (this.face === UP || this.isMatch) {
+    if (this.sound === UP || this.isMatch) {
       fill('pink');
       rect(this.x, this.y, this.width, this.height);
-      image(this.cardFaceImg, this.x, this.y);
+      image(this.cardsoundImg, this.x, this.y);
     } else {
       fill('orange');
       rect(this.x, this.y, this.width, this.height);
@@ -154,10 +154,10 @@ class Card {
   }
 
   flip () {
-    if (this.face === DOWN) {
-      this.face = UP;
+    if (this.sound === DOWN) {
+      this.sound = UP;
     } else {
-      this.face = DOWN;
+      this.sound = DOWN;
     }
     this.show();
   }
