@@ -4,7 +4,7 @@ let startingX = 50;
 let startingY = 50;
 let cards = [];
 const gameState = {
-  totalPairs: 5,
+  totalPairs: 6,
   flippedCards:[],
   numMatched: 0,
   attempts: 0,
@@ -14,17 +14,17 @@ let cardfaceArray = [];
 let cardBack;
 
 function preload () {
-  // cardBack = loadImage ('resized_images/cardback.png');
+  cardBack = loadImage ('lib/imgs/resized/birdeggs.jpg');
   cardfaceArray = [
-    loadImage('imgs/resized/barred-owl.jpg'),
-    loadImage('imgs/resized/cardinal.jpg'),
-    loadImage('imgs/resized/chickadee.jpg'),
-    loadImage('imgs/resized/Hermit-Thrush.jpg'),
-    loadImage('imgs/resized/loon.jpg')
+    loadImage('lib/imgs/resized/barred-owl.jpg'),
+    loadImage('lib/imgs/resized/cardinal.jpg'),
+    loadImage('lib/imgs/resized/chickadee.jpg'),
+    loadImage('lib/imgs/resized/hermithrush.jpg'),
+    loadImage('lib/imgs/resized/loon.jpg')
   ]
 }
 function setup () {
-  createCanvas(800, 600);
+  createCanvas(1500, 1000);
   let selectedFaces = [];
   for (let z = 0; z < 5; z++) {
     const randomIdx = floor(random(cardfaceArray.length));
@@ -43,15 +43,15 @@ function setup () {
       // pushed card in to create new cookie
       cards.push(new Card(startingX, startingY, faceImage));
       // increment
-      startingX += 150;
+      startingX += 250;
     }
-    startingY += 200;
+    startingY += 400;
     startingX = 50;
   }
 }
 
 function draw () {
-  background('#007299'); 
+  background('fff'); 
   if (gameState.numMatched === gameState.totalPairs) {
     fill('#f2d13d');
     textFont('Impact');
@@ -114,8 +114,8 @@ class Card {
     // properties
     this.x = x;
     this.y = y;
-    this.width = 100;
-    this.height = 150;
+    this.width = 200;
+    this.height = 300;
     this.face = DOWN;
     this.cardFaceImg = cardFaceImg;
     this.isMatch = false;
@@ -125,7 +125,7 @@ class Card {
   // method.
   show () {
     if (this.face === UP || this.isMatch) {
-      fill('green');
+      fill('pink');
       rect(this.x, this.y, this.width, this.height);
       image(this.cardFaceImg, this.x, this.y);
     } else {
