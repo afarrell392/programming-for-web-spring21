@@ -14,17 +14,17 @@ let cardfaceArray = [];
 let cardBack;
 
 function preload () {
-  cardBack = loadImage ('lib/imgs/resized/birdeggs.jpg');
+  cardBack = loadImage ('lib/imgs/240-300/birdeggs.jpg');
   cardfaceArray = [
-    loadImage('lib/imgs/resized/barred-owl.jpg'),
-    loadImage('lib/imgs/resized/cardinal.jpg'),
-    loadImage('lib/imgs/resized/chickadee.jpg'),
-    loadImage('lib/imgs/resized/hermithrush.jpg'),
-    loadImage('lib/imgs/resized/loon.jpg')
+    loadImage('lib/imgs/240-300/barred-owl.jpg'),
+    loadImage('lib/imgs/240-300/cardinal.jpg'),
+    loadImage('lib/imgs/240-300/chickadee.jpg'),
+    loadImage('lib/imgs/240-300/hermit-thrush.jpg'),
+    loadImage('lib/imgs/240-300/loon.jpg')
   ]
 }
 function setup () {
-  createCanvas(1500, 1000);
+  createCanvas(1550, 1000);
   let selectedFaces = [];
   for (let z = 0; z < 5; z++) {
     const randomIdx = floor(random(cardfaceArray.length));
@@ -43,7 +43,7 @@ function setup () {
       // pushed card in to create new cookie
       cards.push(new Card(startingX, startingY, faceImage));
       // increment
-      startingX += 250;
+      startingX += 300;
     }
     startingY += 400;
     startingX = 50;
@@ -51,12 +51,12 @@ function setup () {
 }
 
 function draw () {
-  background('fff'); 
+  background('#fcf9f0'); 
   if (gameState.numMatched === gameState.totalPairs) {
     fill('#f2d13d');
     textFont('Impact');
     textSize(110);
-    text('you win!!!', 330, 520);
+    text('you win!!!', 330, 700);
     noLoop();
   }
   for (let k = 0; k < cards.length; k++) {
@@ -69,10 +69,9 @@ function draw () {
   gameState.flippedCards.length = 0;
   gameState.waiting = false;
   fill('#799c4b');
-  textFont('Courier');
   textSize(30);
-  text('attempts: ' + gameState.attempts, 50, 530);
-  text('matches: ' + gameState.numMatched, 50, 480);
+  text('attempts: ' + gameState.attempts, 50, 830);
+  text('matches: ' + gameState.numMatched, 50, 880);
 }
 function mousePressed () {
   if (gameState.waiting) {
@@ -114,7 +113,7 @@ class Card {
     // properties
     this.x = x;
     this.y = y;
-    this.width = 200;
+    this.width = 240;
     this.height = 300;
     this.face = DOWN;
     this.cardFaceImg = cardFaceImg;
