@@ -14,13 +14,13 @@ let cardfaceArray = [];
 let cardBack;
 
 function preload () {
-  cardBack = loadImage ('resized_images/cardback.png');
+  // cardBack = loadImage ('resized_images/cardback.png');
   cardfaceArray = [
-    loadImage('resized_images/adultzfish2.png'),
-    loadImage('resized_images/axolotl.png'),
-    loadImage('resized_images/celegans.png'),
-    loadImage('resized_images/killifish.png'),
-    loadImage('resized_images/celeganscell.png')
+    loadImage('imgs/resized/barred-owl.jpg'),
+    loadImage('imgs/resized/cardinal.jpg'),
+    loadImage('imgs/resized/chickadee.jpg'),
+    loadImage('imgs/resized/Hermit-Thrush.jpg'),
+    loadImage('imgs/resized/loon.jpg')
   ]
 }
 function setup () {
