@@ -1,9 +1,7 @@
 /* eslint-disable no-new */
-// let sound1, sound2, sound3, sound4, sound5;
-// let egg, barredOwl, cardinal, chickadee, hermitThrush, loon;
+let sound1, sound2, sound3, sound4, sound5;
+let egg, barredOwl, cardinal, chickadee, hermitThrush, loon;
 
-// Create a quiz object with a title and two questions.
-// A question has one or more answer, and one or more is valid.
 var quiz = {
   title: 'Quiz: Birds of a Feather',
   questions: [
