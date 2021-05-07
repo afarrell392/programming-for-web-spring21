@@ -8,10 +8,47 @@
     <title>Birds of a Feather</title>
 </head>
 <body>
-    <h1>TEST VERSION Birds of a Feather</h1>
-    <p>You might be able to visually ID a cardinal, but can you ID it by sound??</p>
-<script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+    <div id="app" v-cloak>
+    <h1>{{ quiz.title }}</h1>
+       <h2>Test your bird knowledge!</h2> 
+       <h3> For this quiz, use the number keys on your keyboard to see and hear a bird species. See if you can identify the bird!</h3>
+        <!-- index is used to check with current question index -->
+        <div class="quiz-container" v-for="(question, index) in quiz.questions">
+          <div v-show="index === questionIndex">
+            <h4>{{ question.text }}</h4>
+            <ol>
+              <li v-for="response in question.responses">
+                <label>
+                  <input type="radio" 
+                         v-bind:value="response.correct" 
+                         v-bind:name="index" 
+                         v-model="userResponses[index]"> {{response.text}}
+                </label>
+              </li>
+            </ol>
+            <!-- The two navigation buttons -->
+            <!-- Note: prev is hidden on first question -->
+            <button v-if="questionIndex > 0" v-on:click="prev">
+              prev
+            </button>
+            <button v-on:click="next">
+              next
+            </button>
+          </div>
+        </div>
+        <div v-show="questionIndex === quiz.questions.length">
+          <h2>
+          Quiz finished
+        </h2>
+          <p>
+            Total score: {{ score() }} / {{ quiz.questions.length }}
+          </p>
+        </div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
 <script src="lib/p5-sound.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 <script src = "lib/matching-game.js"></script>
 </body>
 </html>

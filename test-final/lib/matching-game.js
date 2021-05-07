@@ -1,5 +1,75 @@
-let sound1, sound2, sound3, sound4, sound5;
-var barredOwl, cardinal, chickadee, hermitThrush, loon;
+/* eslint-disable no-new */
+// let sound1, sound2, sound3, sound4, sound5;
+// let egg, barredOwl, cardinal, chickadee, hermitThrush, loon;
+
+// Create a quiz object with a title and two questions.
+// A question has one or more answer, and one or more is valid.
+var quiz = {
+  title: 'Quiz: Birds of a Feather',
+  questions: [
+    {
+      text: 'Press 1. What bird do you think it is?',
+      responses: [
+        { text: 'Screech Owl' },
+        { text: 'Barred Owl', correct: true }
+      ]
+    }, {
+      text: 'Press 2. What bird do you think it is?',
+      responses: [
+        { text: 'Cardinal', correct: true },
+        { text: 'Robin' }
+      ]
+    },
+    {
+      text: 'Press 3. What bird do you think it is?',
+      responses: [
+        { text: 'Chickadee', correct: true },
+        { text: 'Tufted Titmouse' }
+      ]
+    },
+    {
+      text: 'Press 4. What bird do you think it is?',
+      responses: [
+        { text: 'Alpine Thrush' },
+        { text: 'Hermit Thrush', correct: true }
+      ]
+    },
+    {
+      text: 'Press 5. What bird do you think it is?',
+      responses: [
+        { text: 'Eider' },
+        { text: 'Loon', correct: true }
+      ]
+    }
+  ]
+};
+
+new Vue({
+  el: '#app',
+  data: {
+    quiz: quiz,
+    // Store current question index
+    questionIndex: 0,
+    // An array initialized with "false" values for each question
+    // It means: "did the user answered correctly to the question n?" "no".
+    userResponses: Array(quiz.questions.length).fill(false)
+  },
+  // The view will trigger these methods on click
+  methods: {
+    // Go to next question
+    next: function () {
+      this.questionIndex++;
+    },
+    // Go to previous question
+    prev: function () {
+      this.questionIndex--;
+    },
+    // Return "true" count in userResponses
+    score: function () {
+      return this.userResponses.filter(function (val) { return val }).length;
+    }
+  }
+});
 
 function preload () {
   soundFormats('wav');
@@ -8,6 +78,7 @@ function preload () {
   sound3 = loadSound('lib/sounds/chickadee.wav'),
   sound4 = loadSound('lib/sounds/hermit-thrush.wav'),
   sound5 = loadSound('lib/sounds/loon.wav'),
+  egg = loadImage('lib/imgs/240-300/birdeggs.jpg'),
   barredOwl = loadImage('lib/imgs/240-300/barred-owl.jpg'),
   cardinal = loadImage('lib/imgs/240-300/cardinal.jpg'),
   chickadee = loadImage('lib/imgs/240-300/chickadee.jpg'),
@@ -15,65 +86,29 @@ function preload () {
   loon = loadImage('lib/imgs/240-300/loon.jpg')
 }
 
-function setup() {
+function setup () {
   createCanvas(1550, 1000);
-  noise = new p5.Noise();
-  noise.start();
-  noise.amp(0);
-  amplitude = new p5.Amplitude();
 }
+function draw () {
+  // remove the background for the image to stay on the page
+  background('#fcf9f0');
+  fill('#ccc');
 
-function draw() {
-  background(40);
-  noFill();
-
- // barred owl
- fill ('#cc3300')
- if (mouseIsPressed) {
-  image (barredOwl, 100, 150);
- } else {rect (100, 150, 230, 300);
- }
-  // cardinal
-  fill ('#cc3300')
-
-if (mouseIsPressed) {
-  image (cardinal, 350, 150);
- } else {rect (350, 150, 230, 300);
- }
-
-
-   // chickadee
-   image (chickadee, 600, 150);
-
-   // hermit thrush
-  image (hermitThrush, 850, 150);
-
-  // loon
-  image (loon, 1100, 150);
-
-  const level = amplitude.getLevel();
-
-const levelHeight = map(level, 0, 1, 0, height);
-
-
-if (sound1.isPlaying () === true) {
-    fill ('#fff');
-    rect (100, 150, 230, 300);
-}
-if (sound2.isPlaying () === true) {
-  fill ('#ccc');
-  rect (350, 150, 230, 300)
-}
-if (sound3.isPlaying () === true) {
-    stroke('#FFFF00');
-    square(270, 550, 30);
-}
-if (sound4.isPlaying () === true) {
-    image (hermitThrush, 100, 500);
-}
-if (sound5.isPlaying () === true) {
-    image (loon, 350, 500);
-}
+  if (sound1.isPlaying() === true) {
+    image(barredOwl, 100, 100);
+  }
+  if (sound2.isPlaying() === true) {
+    image(cardinal, 100, 100);
+  }
+  if (sound3.isPlaying() === true) {
+    image(chickadee, 100, 100);
+  }
+  if (sound4.isPlaying() === true) {
+    image(hermitThrush, 100, 100);
+  }
+  if (sound5.isPlaying() === true) {
+    image(loon, 100, 100);
+  }
 }
 // key press to call sound
 function keyPressed () {
@@ -87,5 +122,5 @@ function keyPressed () {
     sound4.play();
   } else if (key === '5') {
     sound5.play();
-  }   
+  }
 }
