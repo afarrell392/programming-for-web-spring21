@@ -12,7 +12,6 @@ const gameState = {
 };
 let cardfaceArray = [];
 let cardBack;
-let cardsoundArray = [];
 
 function preload () {
   cardBack = loadImage('lib/imgs/240-300/birdeggs.jpg');
@@ -23,16 +22,7 @@ function preload () {
     loadImage('lib/imgs/240-300/hermit-thrush.jpg'),
     loadImage('lib/imgs/240-300/loon.jpg')
   ]
-  soundFormats('wav');
-  cardsoundArray = [
-    sound1 = loadSound('barred-owl'),
-    sound2 = loadSound('cardinal'),
-    sound3 = loadSound('chickadee'),
-    sound4 = loadSound('hermit-thrush'),
-    sound5 = loadSound('loon')
-  ]
 }
-
 function setup () {
   cnv = createCanvas(1550, 1000);
   let selectedFaces = [];
@@ -66,7 +56,7 @@ function draw () {
     fill('#f2d13d');
     textFont('Impact');
     textSize(110);
-    text('you win!!!', 330, 700);
+    text('you win!!!', 130, 900);
     noLoop();
   }
   for (let k = 0; k < cards.length; k++) {
@@ -78,11 +68,12 @@ function draw () {
   noLoop();
   gameState.flippedCards.length = 0;
   gameState.waiting = false;
-  fill('#799c4b');
-  textSize(30);
-  text('attempts: ' + gameState.attempts, 50, 830);
-  text('matches: ' + gameState.numMatched, 50, 880);
+  fill('#78b0a2');
+  textSize(20);
+  text('Attempts: ' + gameState.attempts, 50, 830);
+  text('Matches: ' + gameState.numMatched, 50, 880);
 }
+
 function mousePressed () {
   if (gameState.waiting) {
     return;
