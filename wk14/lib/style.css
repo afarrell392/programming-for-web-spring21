@@ -42,6 +42,11 @@ mark {
   background: #78b0a2;
 }
 
+.score {
+  font-weight: 800;
+  font-size: 40px;
+}
+
 .end {
   font-weight: 800;
   text-align: center;

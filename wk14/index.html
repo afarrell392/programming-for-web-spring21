@@ -37,15 +37,19 @@
             </button>
           </div>
         </div>
-        <div v-show="questionIndex === quiz.questions.length">
+        <div v-show="questionIndex === quiz.questions.length" class="score">
           <h2>
           Quiz finished
         </h2>
-          <p>
+          <p >
             Total score: {{ score() }} / {{ quiz.questions.length }}
           </p>
-          <p class="end">Thanks for playing!</p>
+          <div class="end">
+            <p>Thanks for playing!</p>
+            <img src="lib/imgs/240-300/birdeggs.jpg">
+          </div>
         </div>
+        
       </div>
 
       <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
