@@ -32,6 +32,10 @@ button {
   background-color: rosybrown;
 }
 
+mark {
+  background-color: rosybrown;
+}
+
 .quiz-container {
   padding: 2px;
   padding-left: 20px;

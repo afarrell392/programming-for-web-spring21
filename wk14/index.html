@@ -11,11 +11,12 @@
     <div id="app" v-cloak>
     <h1>{{ quiz.title }}</h1>
        <h2>Test your bird knowledge!</h2> 
-       <h3> For this quiz, use the number keys on your keyboard to see and hear a bird species. See if you can identify the bird!</h3>
+       <h3> For this quiz, <mark>use the number keys on your keyboard</mark> to hear the bird call. Can you identify the bird?</h3>
         <!-- index is used to check with current question index -->
         <div class="quiz-container" v-for="(question, index) in quiz.questions">
           <div v-show="index === questionIndex">
             <h4>{{ question.text }}</h4>
+            <p><img v-bind:src="question.image"></p>
             <ol>
               <li v-for="response in question.responses">
                 <label>
